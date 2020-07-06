@@ -1,13 +1,29 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
 import "./assets/style.css";
+import quizService from "./quizService";
 
 class QuizBee extends Component {
+    state = {
+        questionBank : []
+    };
+    
+    getQuestions = () => {
+        quizService().then(question => {
+            this.setState({
+                questionBank : question
+            });
+        });
+    }
+
+    componentDidMount() {
+        this.getQuestions();
+    }
+
     render() {
         return(
             <div className="container">
                 <div className="title">
-                   {/* <h1>QuizBee</h1> */}
                    QuizBee
                 </div>
             </div>
