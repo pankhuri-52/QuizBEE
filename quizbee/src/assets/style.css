@@ -20,6 +20,11 @@
   margin: auto;
 }
 
+h1 {
+  align-items: center;
+  justify-content: center;
+}
+
 .title {
   position: relative;
   background-color: rgba(0, 0, 0, 1);
